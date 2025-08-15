@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Website - Watermark Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .hero {
+            padding: 50px 0;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        .btn {
+            background: linear-gradient(135deg, #FF6B35 0%, #FFD23F 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>🌟 Test Website</h1>
+            <p>This is a demo website to test the watermark functionality</p>
+            <a href="#" class="btn">Get Started</a>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+
+        <div class="feature">
+            <h2>🚀 Feature 1</h2>
+            <p>This website demonstrates how the watermark appears on hosted websites. The watermark will be automatically added to all HTML files uploaded to the hosting platform.</p>
+        </div>
+
+        <div class="feature">
+            <h2>⚡ Feature 2</h2>
+            <p>The watermark is customizable through the admin settings. You can change its position, color, size, and text content.</p>
+        </div>
+
+        <div class="feature">
+            <h2>🎨 Feature 3</h2>
+            <p>The watermark uses modern CSS styling with glassmorphism effects and smooth animations for a professional appearance.</p>
+        </div>
+
+        <div style="margin-top: 50px; padding: 30px; text-align: center;">
+            <h3>Notice</h3>
+            <p>This website is hosted using the Free HTML Hosting platform. The watermark will appear in the bottom-right corner (or as configured by the admin).</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple interaction demo
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('This is a demo button from the test website!');
+            });
+        });
+
+        // Add some animation
+        window.addEventListener('load', function() {
+            document.querySelectorAll('.feature').forEach((feature, index) => {
+                feature.style.opacity = '0';
+                feature.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    feature.style.transition = 'all 0.6s ease';
+                    feature.style.opacity = '1';
+                    feature.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
